@@ -1,0 +1,12 @@
+--- realtimebattle-1.0.8.orig/realtimebattle.desktop
++++ realtimebattle-1.0.8/realtimebattle.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Name=Real Time Battle
++GenericName=Real Time Battle
++Comment=realtimebattle executable
++Exec=realtimebattle
++Icon=RealTimeBattle
++Terminal=false
++Type=Application
++Categories=Game;
