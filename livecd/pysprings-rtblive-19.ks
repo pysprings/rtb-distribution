@@ -362,21 +362,15 @@ EOF
 @anaconda-tools
 @base-x
 @core
-@dial-up
 @fonts
 @guest-desktop-agents
 @hardware-support
 @input-methods
--@multimedia
 @printing
 @standard
 @xfce-apps
 @xfce-desktop
 @xfce-extra-plugins
--@xfce-media
--@xfce-office
-realtimebattle
-numpy
 anaconda
 gnome-keyring-pam
 kernel
@@ -414,5 +408,24 @@ qemu-guest-agent
 -xfce4-sensors-plugin
 -xsane
 -xsane-gimp
+
+# realtimebattle and deps
+gtk2-devel
+glib2-devel
+java-1.7.0-openjdk-devel
+desktop-file-utils
+realtimebattle-devel
+gcc-c++
+
+# added for the pysprings rtb livecd
+numpy
+git
+vim
+kate
+python-virtualenv
+python-twisted-core
+python-twisted
+python-scikit-learn
+python-ipython
 
 %end
