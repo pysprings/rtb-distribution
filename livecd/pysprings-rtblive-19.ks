@@ -1,11 +1,10 @@
-#version=DEVEL
-# Firewall configuration
-firewall --enabled --service=mdns
-# X Window System configuration information
-xconfig  --startxonboot
+# pysprings rtb live cd
+# based on fedora's XFCE spin from https://git.fedorahosted.org/git/spin-kickstarts.git
+
 repo --name="fedora" --mirrorlist=http://mirrors.fedoraproject.org/mirrorlist?repo=fedora-$releasever&arch=$basearch
 repo --name="updates" --mirrorlist=http://mirrors.fedoraproject.org/mirrorlist?repo=updates-released-f$releasever&arch=$basearch
-repo --name="local" --baseurl=file:///home/tflink/rtb-live/repo/
+repo --name="pyspringsrtb" --baseurl=https://pysprings.org/repo/$releasever/$basearch
+
 # Keyboard layouts
 keyboard 'us'
 # System timezone
@@ -21,6 +20,12 @@ selinux --enforcing
 services --disabled="network,sshd" --enabled="NetworkManager"
 # Disk partitioning information
 part / --fstype="ext4" --size=8096
+
+# X Window System configuration information
+xconfig  --startxonboot
+
+# Firewall configuration
+firewall --enabled --service=mdns
 
 %post
 # FIXME: it'd be better to get this installed from a package
@@ -414,7 +419,9 @@ gtk2-devel
 glib2-devel
 java-1.7.0-openjdk-devel
 desktop-file-utils
-realtimebattle-devel
+realtimebattle
+# for some reason, this isn't working so getting rid of it for now
+# realtimebattle-devel
 gcc-c++
 
 # added for the pysprings rtb livecd
